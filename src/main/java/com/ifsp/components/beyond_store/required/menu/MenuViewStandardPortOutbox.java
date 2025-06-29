@@ -2,9 +2,9 @@ package com.ifsp.components.beyond_store.required.menu;
 
 import java.util.List;
 
-import com.ifsp.components.beyond_store.provided.sales.SalesStatisticsInterfacePort;
+import com.ifsp.luan.sales_statistics_component.provided.sales.SalesStatisticsInterfacePort;
 import com.ifsp.components.beyond_store.provided.product.ProductCatalogInterfacePort;
-import com.ifsp.components.beyond_store.required.sales.RequiredSalesStatistics;
+import com.ifsp.luan.sales_statistics_component.required.sales.RequiredSalesStatistics;
 import com.ifsp.components.beyond_store.required.product.RequiredProductCatalog;
 
 import com.ifsp.tavinho.beyond_boilerplate.required.StandardPortOutbox;

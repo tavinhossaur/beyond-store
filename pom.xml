@@ -22,6 +22,10 @@
             <id>customer-manager-component</id>
             <url>https://maven.pkg.github.com/tavinhossaur/customer-manager-component</url>
         </repository>
+        <repository>
+            <id>sales_statistics_component</id>
+            <url>https://maven.pkg.github.com/Tavaress17/sales_statistics_component</url>
+        </repository>
     </repositories>
 
     <dependencies>
@@ -33,6 +37,11 @@
         <dependency>
             <groupId>com.ifsp.tavinho</groupId>
             <artifactId>customer-manager-component</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ifsp.luan</groupId>
+            <artifactId>sales_statistics_component</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
