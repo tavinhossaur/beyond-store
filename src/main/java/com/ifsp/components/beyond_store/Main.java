@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import com.ifsp.components.beyond_store.provided.menu.MenuViewInterface;
 import com.ifsp.components.beyond_store.provided.menu.MenuViewInterfacePort;
-import com.ifsp.components.beyond_store.provided.product.ProductCatalogInterface;
+import com.ifsp.yuri.product_catalog_component.provided.product.ProductCatalogInterface;
 import com.ifsp.luan.sales_statistics_component.provided.sales.SalesStatisticsInterface;
 
 import com.ifsp.tavinho.beyond_boilerplate.provided.ComponentInterface;

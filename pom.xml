@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.ifsp.components</groupId>
@@ -26,10 +26,14 @@
             <id>sales_statistics_component</id>
             <url>https://maven.pkg.github.com/Tavaress17/sales_statistics_component</url>
         </repository>
+        <repository>
+            <id>product_catalog_component</id>
+            <url>https://maven.pkg.github.com/Yuri-DNS/product_catalog_component</url>
+        </repository>
     </repositories>
 
     <dependencies>
-        <dependency> 
+        <dependency>
             <groupId>com.ifsp.tavinho</groupId>
             <artifactId>beyond-boilerplate</artifactId>
             <version>1.0.0</version>
@@ -42,6 +46,11 @@
         <dependency>
             <groupId>com.ifsp.luan</groupId>
             <artifactId>sales_statistics_component</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ifsp.yuri</groupId>
+            <artifactId>product_catalog_component</artifactId>
             <version>1.0.0</version>
         </dependency>
         <dependency>
