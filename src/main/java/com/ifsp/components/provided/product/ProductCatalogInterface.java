@@ -1,7 +1,7 @@
-package provided.product;
+package com.ifsp.components.provided.product;
 
-import internal.ProductCatalog;
-import provided.boilerplate.ComponentInterface;
+import com.ifsp.components.internal.ProductCatalog;
+import com.ifsp.components.provided.boilerplate.ComponentInterface;
 
 public class ProductCatalogInterface extends ComponentInterface {
     
