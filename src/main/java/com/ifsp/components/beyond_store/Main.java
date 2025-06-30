@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import com.ifsp.components.beyond_store.provided.menu.MenuViewInterface;
-import com.ifsp.components.beyond_store.provided.menu.MenuViewInterfacePort;
+import com.ifsp.sleep.menu_view_component.provided.MenuViewInterface;
+import com.ifsp.sleep.menu_view_component.provided.MenuViewInterfacePort;
 import com.ifsp.yuri.product_catalog_component.provided.product.ProductCatalogInterface;
 import com.ifsp.luan.sales_statistics_component.provided.sales.SalesStatisticsInterface;
 
