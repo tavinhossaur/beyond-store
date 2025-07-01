@@ -6,14 +6,13 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
-import com.ifsp.sleep.menu_view_component.provided.MenuViewInterface;
-import com.ifsp.sleep.menu_view_component.provided.MenuViewInterfacePort;
-import com.ifsp.yuri.product_catalog_component.provided.product.ProductCatalogInterface;
-import com.ifsp.luan.sales_statistics_component.provided.sales.SalesStatisticsInterface;
-
 import com.ifsp.tavinho.beyond_boilerplate.provided.ComponentInterface;
 
+import com.ifsp.sleep.menu_view_component.provided.MenuViewInterface;
+import com.ifsp.sleep.menu_view_component.provided.MenuViewInterfacePort;
+import com.ifsp.luan.sales_statistics_component.provided.sales.SalesStatisticsInterface;
 import com.ifsp.tavinho.customer_manager_component.provided.customer.CustomerManagerInterface;
+import com.ifsp.yuri.product_catalog_component.provided.product.ProductCatalogInterface;
 
 @SuppressWarnings("unchecked")
 public class Main {
@@ -48,26 +47,19 @@ public class Main {
 
             String option = scanner.nextLine().trim().toLowerCase();
             switch (option) {
-                case "1":
-                    clientesMenu(customerManager, scanner);
+                case "1": customersMenu(customerManager, scanner);
                     break;
-                case "2":
-                    produtosMenu(productCatalog, scanner);
+                case "2": productsMenu(productCatalog, scanner);
                     break;
-                case "3":
-                    vendasMenu(salesStatistics, scanner);
+                case "3": salesMenu(salesStatistics, scanner);
                     break;
-                case "0":
-                    System.out.println("\nEnding the program...");
-                    scanner.close();
-                    System.exit(0);
-                default:
-                    System.out.println("Invalid option. Try again.");
+                case "0": endProgram(scanner); return;
+                default: System.out.println("Invalid option. Try again.");
             }
         }
     }
 
-    private static void clientesMenu(CustomerManagerInterface customerManager, Scanner scanner) {
+    private static void customersMenu(CustomerManagerInterface customerManager, Scanner scanner) {
         MenuViewInterfacePort menuPort = switchConnection(customerManager, "customer");
 
         while (true) {
@@ -95,7 +87,7 @@ public class Main {
                 case "2":
                     Object customers = menuPort.doCustomerOperation("list", null);
 
-                    if (customers instanceof List && ((List<?>)customers).isEmpty()) System.out.println("No customer registered.");
+                    if (customers instanceof List && ((List<?>) customers).isEmpty()) System.out.println("No customer registered.");
                     else System.out.println("Customers registered:\n" + String.join("\n", (List<String>) customers));
                     
                     break;
@@ -111,7 +103,7 @@ public class Main {
         }
     }
 
-    private static void produtosMenu(ProductCatalogInterface productCatalog, Scanner scanner) {
+    private static void productsMenu(ProductCatalogInterface productCatalog, Scanner scanner) {
         MenuViewInterfacePort menuPort = switchConnection(productCatalog, "product");
         
         while (true) {
@@ -139,7 +131,7 @@ public class Main {
                 case "2":
                     Object products = menuPort.doProductOperation("list", null);
 
-                    if (products instanceof List && ((List<?>)products).isEmpty()) System.out.println("No product registered.");
+                    if (products instanceof List && ((List<?>) products).isEmpty()) System.out.println("No product registered.");
                     else System.out.println("Products registered:\n" + String.join("\n", (List<String>) products));
 
                     break;
@@ -162,7 +154,7 @@ public class Main {
         }
     }
 
-    private static void vendasMenu(SalesStatisticsInterface salesStatistics, Scanner scanner) {
+    private static void salesMenu(SalesStatisticsInterface salesStatistics, Scanner scanner) {
         MenuViewInterfacePort menuPort = switchConnection(salesStatistics, "sales");
 
         while (true) {
@@ -221,5 +213,10 @@ public class Main {
     private static MenuViewInterfacePort switchConnection(ComponentInterface component, String componentName) {
         menuView.connect(component.getPort("port." + componentName), "port.menu");
         return (MenuViewInterfacePort) menuView.getPort("port.menu");
+    }
+
+    private static void endProgram(Scanner scanner) {
+        System.out.println("\nEnding the program...");
+        scanner.close();
     }
 }
