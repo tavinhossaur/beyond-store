@@ -177,6 +177,11 @@ public class Main {
                 System.err.println("\nInvalid input. Enter only numbers separated by space or comma.");
                 continue;
             }
+            
+            if (salesList.isEmpty()) {
+                System.err.println("\nNo sales values entered. Please try again.");
+                continue;
+            }
 
             System.out.println();
             printMenuOptions(menuPort.getSalesStatisticsMenuOptions());
